@@ -7,10 +7,7 @@
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-
-<?php $backgroundColour = "#fff" ?>
-
-    <div class="container" style="background-color: <?php echo $backgroundColour; ?>;">
+    <div class="container">
     <h1>FLIP THE TORIES</h1>
     <?php
 
