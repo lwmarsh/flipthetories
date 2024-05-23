@@ -9,10 +9,10 @@ class Recommender {
         $this->dbc = $dbc;
     }
 
-    public function getRecommendation($constituency) {
-        $query = "SELECT * FROM results_2019 WHERE constituency = ?";
+    public function getRecommendation($searchedConstituency) {
+        $query = "SELECT * FROM results_2019 WHERE LOWER(constituency) = LOWER(?)";
         $statement = $this->dbc->prepare($query);
-        $statement->bind_param("s", $constituency);
+        $statement->bind_param("s", $searchedConstituency);
         $statement->execute();
         $result = $statement->get_result();
 
@@ -21,6 +21,7 @@ class Recommender {
         }
 
         while ($row = $result->fetch_assoc()) {
+            $constituency = $row["constituency"];
             $recommendation = $row["recommendation"];
             $url = $row["url"];
             }

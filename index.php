@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container" style="background-color: #E8EAF6;">
     <h1>FLIP THE TORIES</h1>
     <?php
 
