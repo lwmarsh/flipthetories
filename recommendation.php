@@ -30,7 +30,8 @@ class Recommender {
             $recommendation = "Sinn Féin";
         }
         
-        echo "<div style='background-color: " . $this->getBackgroundColour($recommendation) . "; padding: 20px;'>";
+        echo "<div style='background-color: " . $this->getBackgroundColour($recommendation) . "; border: solid " . $this->getBorderColour($recommendation) . " 5px;
+        padding: 20px;'>";
         echo "<h3>Recommendation for $constituency:</h3>";
         echo "<p class='title'>$recommendation</h1>";
         echo "<p>For more information, visit the tactical.vote page for <a href='$url'target='_blank' rel='noopener noreferrer'>$constituency</a>.</p>";
@@ -55,6 +56,29 @@ class Recommender {
                 return "#FDF38E";
             case "Plaid Cymru":
                 return "#009696";
+            default:
+                return "White";
+        }
+    }
+
+    public function getBorderColour($recommendation) {
+        switch ($recommendation) {
+            case "Labour":
+                return "#E4003B";
+            case "Liberal Democrat":
+                return "#FAA61A";
+            case "Independent":
+                return "#DCDCDC";
+            case "Alliance":
+                return "#F6CB2F";
+            case "Social Democratic and Labour Party":
+                return "#2AA82C";
+            case "Sinn Féin":
+                return "#326760";
+            case "Scottish National Party":
+                return "#FDF38E";
+            case "Plaid Cymru":
+                return "#005B54";
             default:
                 return "White";
         }
