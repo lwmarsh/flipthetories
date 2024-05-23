@@ -16,8 +16,13 @@ class Recommender {
         $statement->execute();
         $result = $statement->get_result();
 
+        if ($result->num_rows == 0) {
+            throw new Exception("<div style='background-color: black;padding: 20px;'><p style='color: white;'>No data found for the specified constituency.</p><p style='color: white;'>Please check your spelling and try again.</p></div>");
+        }
+
         while ($row = $result->fetch_assoc()) {
             $recommendation = $row["recommendation"];
+            $url = $row["url"];
             }
         
         if ($recommendation == "Sinn FÃ©in") {
@@ -25,15 +30,16 @@ class Recommender {
         }
         
         echo "<div style='background-color: " . $this->getBackgroundColour($recommendation) . "; padding: 20px;'>";
-        echo "<h2>Recommendation for $constituency:</h2>";
-        echo "<p>$recommendation</p>";
+        echo "<h3>Recommendation for $constituency:</h3>";
+        echo "<h1>$recommendation</h1>";
+        echo "<p>For more information, visit the tactical.vote page for <a href='$url'>$constituency</a>.</p>";
         echo "</div>";
     }
 
     public function getBackgroundColour($recommendation) {
         switch ($recommendation) {
             case "Labour":
-                return "#E4003B";
+                return "#FF94B0";
             case "Liberal Democrat":
                 return "#FAA61A";
             case "Independent":
@@ -41,13 +47,13 @@ class Recommender {
             case "Alliance":
                 return "#F6CB2F";
             case "Social Democratic and Labour Party":
-                return "#2AA82C";
+                return "#3BCE3E";
             case "Sinn Féin":
-                return "#326760";
+                return "#7CC0B7";
             case "Scottish National Party":
                 return "#FDF38E";
             case "Plaid Cymru":
-                return "#005B54";
+                return "#009696";
             default:
                 return "White";
         }
