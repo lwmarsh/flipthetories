@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <div class="container" style="background-color: #E8EAF6;">
-    <h1>FLIP THE TORIES</h1>
+    <div class="container">
+    <p class="title">FLIP THE TORIES</p>
+    <h4>Who do you need to vote for to unseat the Tories on 4th July 2024?</h4>
     <?php
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -29,24 +30,24 @@
         echo "$errorMessage";
     }
     
-    echo "<p>Please enter your constituency:</p>
-    <form action='' method='post'>
-        <input type='text' name='constituency'>
-        <button type='submit'>Get Recommendation</button>
+    echo "<br><form action='' method='post'>
+        <input type='text' name='constituency' class='input-box' placeholder='Enter your constituency'>
+        <button type='submit' class='recommend-button'>Get Recommendation</button>
     </form>";
     } else {
     ?>
     
-    <p>Please enter your constituency:</p>
     <form action="" method="post">
-        <input type="text" name="constituency">
-        <button type="submit">Get Recommendation</button>
+        <input type="text" name="constituency" class="input-box" placeholder="Enter your constituency">
+        <button type="submit" class="recommend-button">Get Recommendation</button>
     </form>
     <?php
     }
     ?>
     <br>
-    <small>All voting data is borrowed from <a href="https://tactical.vote/">tactical.vote</a>.</small>
+    <small>Don't know your constituency? Search for your postcode on this <a href="https://www.theguardian.com/politics/ng-interactive/2024/jan/16/find-your-constituency-uk-general-election-2024-boundary-changes-votes-map-postcode" target="_blank" rel="noopener noreferrer">interactive map</a>.</small>
+    <br>
+    <small>All voting data is borrowed from <a href="https://tactical.vote/" target="_blank" rel="noopener noreferrer">tactical.vote</a>.</small>
     </div>
 </body>
 </html>

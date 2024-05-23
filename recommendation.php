@@ -32,8 +32,8 @@ class Recommender {
         
         echo "<div style='background-color: " . $this->getBackgroundColour($recommendation) . "; padding: 20px;'>";
         echo "<h3>Recommendation for $constituency:</h3>";
-        echo "<h1>$recommendation</h1>";
-        echo "<p>For more information, visit the tactical.vote page for <a href='$url'>$constituency</a>.</p>";
+        echo "<p class='title'>$recommendation</h1>";
+        echo "<p>For more information, visit the tactical.vote page for <a href='$url'target='_blank' rel='noopener noreferrer'>$constituency</a>.</p>";
         echo "</div>";
     }
 
