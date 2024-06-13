@@ -1,5 +1,5 @@
 ## Flip the Tories!
- A simple tactical vote indicator built in PHP that allows visitors to find out who they should vote for if they want to get rid of the Tory party.
+ A simple tactical vote indicator built in PHP that allows visitors to find out who they should vote for if they want to get rid of the Tory party in the 2024 General Election.
 
  A live version can be found [here](https://flipthetories.co.uk/).
 
