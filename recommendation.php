@@ -10,7 +10,7 @@ class Recommender {
     }
 
     public function getRecommendation($searchedConstituency) {
-        $query = "SELECT * FROM results_2019 WHERE LOWER(constituency) = LOWER(?)";
+        $query = "SELECT * FROM flip_the_tories WHERE LOWER(constituency) = LOWER(?)";
         $statement = $this->dbc->prepare($query);
         $statement->bind_param("s", $searchedConstituency);
         $statement->execute();
@@ -44,6 +44,8 @@ class Recommender {
                 return "#FF94B0";
             case "Liberal Democrat":
                 return "#FAA61A";
+            case "Green":
+               return "#02A95B";
             case "Independent":
                 return "#DCDCDC";
             case "Alliance":
@@ -67,6 +69,8 @@ class Recommender {
                 return "#E4003B";
             case "Liberal Democrat":
                 return "#FAA61A";
+            case "Green":
+                return "#02A95B";
             case "Independent":
                 return "#DCDCDC";
             case "Alliance":
@@ -80,7 +84,7 @@ class Recommender {
             case "Plaid Cymru":
                 return "#005B54";
             default:
-                return "White";
+                return "Lightgray";
         }
     }
 }
